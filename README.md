@@ -78,7 +78,7 @@ a = 2;
 
 foo();
 
-function roo() {
+function foo() {
 	console.log( a ); //undefined
 	var a = 2;
 }
@@ -115,7 +115,7 @@ var foo = function bar() {
 
 这段程序中的变量标识符foo()被提升并分配给所在作用域（在这里是全局作用域），因此foo()不会导致ReferenceError。但是foo此时并没有赋值（如果它是一个函数声明而不是函数表达式，那么就会赋值）。foo()由于对undefined值进行函数调用而导致非法操作因此抛出TyprError异常。
 
-同时也要记住，即使是具名的函数表达式，名称标识符在赋值之前也无法在所在所用于中使用：
+同时也要记住，即使是具名的函数表达式，名称标识符在赋值之前也无法在所在作用域中使用：
 
 ```js
 
